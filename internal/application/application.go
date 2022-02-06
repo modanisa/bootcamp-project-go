@@ -2,6 +2,7 @@ package application
 
 import (
 	"github.com/modanisa/bootcamp-project-go/internal/hello"
+	"github.com/modanisa/bootcamp-project-go/internal/product"
 	"github.com/modanisa/bootcamp-project-go/pkg/server"
 	"os"
 	"os/signal"
@@ -15,8 +16,13 @@ type Application struct {
 func New() (*Application, error) {
 	helloHandler := hello.NewHandler()
 
+	productRepository := product.NewRepository()
+	productService := product.NewService(productRepository)
+	productHandler := product.NewHandler(productService)
+
 	s := server.New([]server.RegisterRoutesFunc{
 		helloHandler.RegisterRoutes,
+		productHandler.RegisterRoutes,
 	})
 
 	return &Application{server: s}, nil
