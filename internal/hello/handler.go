@@ -2,7 +2,7 @@ package hello
 
 import "github.com/gofiber/fiber/v2"
 
-type Handler struct {}
+type Handler struct{}
 
 func NewHandler() *Handler {
 	return &Handler{}

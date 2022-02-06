@@ -24,6 +24,8 @@ func New() (*Application, error) {
 
 func (a *Application) Run() error {
 	shutdownChan := make(chan os.Signal, 1)
+	// "Ctrl+C" sends `SIGINT`
+	// "kill" commands SEND `SIGTERM`
 	signal.Notify(shutdownChan, syscall.SIGINT, syscall.SIGTERM)
 
 	go func() {
