@@ -16,7 +16,8 @@ type Application struct {
 func New() (*Application, error) {
 	helloHandler := hello.NewHandler()
 
-	productRepository := product.NewRepository()
+	//productRepository := product.NewInMemoryRepository()
+	productRepository := product.NewPostgreRepository()
 	productService := product.NewService(productRepository)
 	productHandler := product.NewHandler(productService)
 
