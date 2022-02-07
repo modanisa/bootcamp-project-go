@@ -1,8 +1,10 @@
 package handler
 
 import (
-	"bootcamp/service"
+	"encoding/json"
 	"net/http"
+
+	"bootcamp/service"
 )
 
 type IHandler interface {
@@ -14,9 +16,22 @@ type Handler struct {
 }
 
 func (c *Handler) Quotes(w http.ResponseWriter, r *http.Request) {
-	c.service.Quotes()
+	response, err := c.service.Quotes()
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte(err.Error()))
+		return
+	}
 
-	w.Write([]byte(""))
+	json, err := json.Marshal(response)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte(err.Error()))
+		return
+	}
+
+	w.Header().Add("content-type", "application/json")
+	w.Write(json)
 }
 
 func NewHander(service service.IQuotesService) IHandler {

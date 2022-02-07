@@ -1,0 +1,19 @@
+mode: set
+bootcamp/service/service.go:16.65,18.16 2 1
+bootcamp/service/service.go:22.2,23.28 2 1
+bootcamp/service/service.go:31.2,31.16 1 1
+bootcamp/service/service.go:18.16,20.3 1 1
+bootcamp/service/service.go:23.28,24.32 1 1
+bootcamp/service/service.go:24.32,26.4 1 1
+bootcamp/service/service.go:26.9,28.4 1 1
+bootcamp/service/service.go:34.55,36.2 1 1
+bootcamp/handler/handler.go:18.66,20.16 2 1
+bootcamp/handler/handler.go:26.2,27.16 2 1
+bootcamp/handler/handler.go:33.2,34.15 2 1
+bootcamp/handler/handler.go:20.16,24.3 3 1
+bootcamp/handler/handler.go:27.16,31.3 3 0
+bootcamp/handler/handler.go:37.57,39.2 1 1
+bootcamp/client/client.go:18.61,20.16 2 1
+bootcamp/client/client.go:23.2,29.15 5 1
+bootcamp/client/client.go:20.16,22.3 1 1
+bootcamp/client/client.go:32.36,34.2 1 1

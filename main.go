@@ -1,26 +1,24 @@
 package main
 
 import (
+	"fmt"
+	"net/http"
+
 	"bootcamp/client"
 	"bootcamp/config"
 	"bootcamp/handler"
 	"bootcamp/service"
-	"fmt"
-	"net/http"
 )
 
 func main() {
-	fmt.Println(config.C.ServiceURL)
+	config := config.Get()
 
-	client := client.NewClient(config.C.ServiceURL)
-
+	client := client.NewClient(config.ServiceURL)
 	service := service.NewService(client)
-	fmt.Println(service.Quotes())
-
 	h := handler.NewHander(service)
 
 	http.HandleFunc("/", h.Quotes)
-	err := http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(config.ServerAddr, nil)
 	if err != nil {
 		fmt.Println(err)
 	}

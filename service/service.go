@@ -2,25 +2,25 @@ package service
 
 import (
 	"bootcamp/client"
-	"fmt"
+	"bootcamp/model"
 )
 
 type IQuotesService interface {
-	Quotes() error
+	Quotes() (*model.QuotesResponse, error)
 }
 
 type QuotesService struct {
 	Client client.IClient
 }
 
-func (s *QuotesService) Quotes() error {
+func (s *QuotesService) Quotes() (*model.QuotesResponse, error) {
 	quotes, err := s.Client.GetQuotes()
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	m := map[string][]string{}
-	for _, v := range quotes {
+	m := model.QuotesResponse{}
+	for _, v := range *quotes {
 		if _, ok := m[v.Author]; !ok {
 			m[v.Author] = []string{v.Text}
 		} else {
@@ -28,9 +28,7 @@ func (s *QuotesService) Quotes() error {
 		}
 	}
 
-	fmt.Println(m)
-
-	return err
+	return &m, nil
 }
 
 func NewService(client client.IClient) IQuotesService {

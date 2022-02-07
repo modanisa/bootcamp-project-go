@@ -1,4 +1,4 @@
 {
-    "serviceURL": "https://type.fit/api/quotes",
-    "maxCounter": 822
+    "serverAddr": ":8080",
+    "serviceURL": "https://type.fit/api/quotes"
 }

@@ -1,35 +1,32 @@
 package client
 
 import (
-	"bootcamp/model"
 	"encoding/json"
-	"io/ioutil"
 	"net/http"
+
+	"bootcamp/model"
 )
 
 type IClient interface {
-	GetQuotes() (model.ClientResponse, error)
+	GetQuotes() (*model.ClientResponse, error)
 }
 
 type Client struct {
 	url string
 }
 
-func (c *Client) GetQuotes() (model.ClientResponse, error) {
+func (c *Client) GetQuotes() (*model.ClientResponse, error) {
 	response, err := http.Get(c.url)
 	if err != nil {
 		return nil, err
 	}
 	defer response.Body.Close()
 
-	read, err := ioutil.ReadAll(response.Body)
-	if err != nil {
-		return nil, err
-	}
-
+	decoder := json.NewDecoder(response.Body)
 	r := &model.ClientResponse{}
-	err = json.Unmarshal(read, r)
-	return *r, err
+	err = decoder.Decode(r)
+
+	return r, err
 }
 
 func NewClient(url string) IClient {

@@ -1,4 +1,4 @@
 {
-    "serviceURL": "modanisa.com",
-    "maxCounter": 0
+    "serverAddr": ":8080",
+    "serviceURL": "https://type.fit/api/quotes"
 }

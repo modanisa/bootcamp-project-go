@@ -6,3 +6,5 @@ type ClientMiniResponse struct {
 }
 
 type ClientResponse []ClientMiniResponse
+
+type QuotesResponse map[string][]string
