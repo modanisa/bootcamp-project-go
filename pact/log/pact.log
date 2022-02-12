@@ -1,0 +1,26 @@
+# Logfile created on 2022-02-12 13:45:06 +0300 by logger.rb/66358
+I, [2022-02-12T13:45:06.489853 #72512]  INFO -- : Running example 'Verifying a pact between Frontend and Backend Given get product list successfully a request not empty for product list with GET /api/v1/products returns a response which has status code 200'
+I, [2022-02-12T13:45:06.489987 #72512]  INFO -- : Sending GET request to path: "/api/v1/products" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get product list successfully"}]}, see debug logs for body
+D, [2022-02-12T13:45:06.490025 #72512] DEBUG -- : body :
+I, [2022-02-12T13:45:06.501218 #72512]  INFO -- : Received response with status: 502, headers: {"Date"=>"Sat, 12 Feb 2022 10:45:06 GMT", "Content-Length"=>"0"}, see debug logs for body
+D, [2022-02-12T13:45:06.501303 #72512] DEBUG -- : body: 
+I, [2022-02-12T13:47:55.314531 #73077]  INFO -- : Running example 'Verifying a pact between Frontend and Backend Given get product list successfully a request not empty for product list with GET /api/v1/products returns a response which has status code 200'
+I, [2022-02-12T13:47:55.314956 #73077]  INFO -- : Sending GET request to path: "/api/v1/products" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get product list successfully"}]}, see debug logs for body
+D, [2022-02-12T13:47:55.314999 #73077] DEBUG -- : body :
+I, [2022-02-12T13:47:55.327653 #73077]  INFO -- : Received response with status: 200, headers: {"Content-Length"=>"185", "Content-Type"=>"application/json", "Date"=>"Sat, 12 Feb 2022 10:47:55 GMT"}, see debug logs for body
+D, [2022-02-12T13:47:55.327726 #73077] DEBUG -- : body: [{"id":1,"name":"tavin","slug":"tavin","description":"tavin marka kıyafet","image":"https://fns.modanisa.com/r/pro2/2021/11/01/n-desenli-mevlana-elbise-tsd4414-turuncu-8067476-7.jpg"}]
+I, [2022-02-12T13:48:39.399110 #73274]  INFO -- : Running example 'Verifying a pact between Frontend and Backend Given get product list successfully a request not empty for product list with GET /api/v1/products returns a response which has status code 200'
+I, [2022-02-12T13:48:39.399247 #73274]  INFO -- : Sending GET request to path: "/api/v1/products" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get product list successfully"}]}, see debug logs for body
+D, [2022-02-12T13:48:39.399282 #73274] DEBUG -- : body :
+I, [2022-02-12T13:48:39.413942 #73274]  INFO -- : Received response with status: 200, headers: {"Content-Length"=>"185", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 12 Feb 2022 10:48:39 GMT"}, see debug logs for body
+D, [2022-02-12T13:48:39.414010 #73274] DEBUG -- : body: [{"id":1,"name":"tavin","slug":"tavin","description":"tavin marka kıyafet","image":"https://fns.modanisa.com/r/pro2/2021/11/01/n-desenli-mevlana-elbise-tsd4414-turuncu-8067476-7.jpg"}]
+I, [2022-02-12T13:48:49.176412 #73361]  INFO -- : Running example 'Verifying a pact between Frontend and Backend Given get product list successfully a request not empty for product list with GET /api/v1/products returns a response which has status code 200'
+I, [2022-02-12T13:48:49.176557 #73361]  INFO -- : Sending GET request to path: "/api/v1/products" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get product list successfully"}]}, see debug logs for body
+D, [2022-02-12T13:48:49.176593 #73361] DEBUG -- : body :
+I, [2022-02-12T13:49:32.713268 #73361]  INFO -- : Received response with status: 200, headers: {"Content-Length"=>"185", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 12 Feb 2022 10:49:32 GMT"}, see debug logs for body
+D, [2022-02-12T13:49:32.713346 #73361] DEBUG -- : body: [{"id":1,"name":"tavin","slug":"tavin","description":"tavin marka kıyafet","image":"https://fns.modanisa.com/r/pro2/2021/11/01/n-desenli-mevlana-elbise-tsd4414-turuncu-8067476-7.jpg"}]
+I, [2022-02-12T13:51:04.765294 #73949]  INFO -- : Running example 'Verifying a pact between Frontend and Backend Given get product list successfully a request not empty for product list with GET /api/v1/products returns a response which has status code 200'
+I, [2022-02-12T13:51:04.765681 #73949]  INFO -- : Sending GET request to path: "/api/v1/products" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get product list successfully"}]}, see debug logs for body
+D, [2022-02-12T13:51:04.765743 #73949] DEBUG -- : body :
+I, [2022-02-12T13:51:04.781102 #73949]  INFO -- : Received response with status: 200, headers: {"Content-Length"=>"185", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 12 Feb 2022 10:51:04 GMT"}, see debug logs for body
+D, [2022-02-12T13:51:04.781164 #73949] DEBUG -- : body: [{"id":1,"name":"tavin","slug":"tavin","description":"tavin marka kıyafet","image":"https://fns.modanisa.com/r/pro2/2021/11/01/n-desenli-mevlana-elbise-tsd4414-turuncu-8067476-7.jpg"}]

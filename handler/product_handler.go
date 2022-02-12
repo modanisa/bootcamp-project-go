@@ -34,7 +34,7 @@ func (p *ProductHandler) GetProducts(w http.ResponseWriter, r *http.Request) {
 
 	productsBytes, _ := json.Marshal(products)
 
-	w.Header().Add("content-type", "application/json")
+	w.Header().Add("content-type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
 	w.Write(productsBytes)
 }

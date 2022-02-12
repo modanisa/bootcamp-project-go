@@ -15,7 +15,16 @@ import (
 
 func TestGetProducts(t *testing.T) {
 	t.Run("only GET method allowed", func(t *testing.T) {
-		productHandler := handler.NewProductHandler(nil)
+		mockService := mock.NewMockIProductService(gomock.NewController(t))
+
+		mockService.
+			EXPECT().
+			Products().
+			Return(model.ProductsResponse{
+				model.ProductResponse{ID: 100},
+			}, nil).
+			Times(1)
+		productHandler := handler.NewProductHandler(mockService)
 		req := httptest.NewRequest(http.MethodGet, "/api/v1/products", http.NoBody)
 		res := httptest.NewRecorder()
 
@@ -49,7 +58,7 @@ func TestGetProducts(t *testing.T) {
 
 		productHandler.GetProducts(res, req)
 		assert.Equal(t, http.StatusOK, res.Result().StatusCode)
-		assert.Equal(t, "application/json", res.Result().Header.Get("content-type"))
+		assert.Equal(t, "application/json; charset=UTF-8", res.Result().Header.Get("content-type"))
 
 		expectedResBody := model.ProductsResponse{}
 		err := json.Unmarshal(res.Body.Bytes(), &expectedResBody)
